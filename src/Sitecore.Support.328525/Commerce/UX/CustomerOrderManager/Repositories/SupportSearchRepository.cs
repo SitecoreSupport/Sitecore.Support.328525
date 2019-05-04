@@ -238,7 +238,9 @@ namespace Sitecore.Support.Commerce.UX.CustomerOrderManager.Repositories
           DateTime date;
           if (DateTime.TryParse(fieldValue.ToString(), out date))
           {
+            #region modified part. removed adding to dictionary twice
             result.Add(f, DateUtil.ToIsoDate(date)); result.Add(f, DateUtil.ToIsoDate(date));
+            #endregion
           }
           else
           {
